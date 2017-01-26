@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Question creation</h1>
+
+<form name="appbundle_questions" method="post">
+       <div><label for="textarea_" class="required">Question</label><textarea id="textarea_" name="question1" required="required"></textarea></div>
+       <div><label for="textarea_1" class="required">Question</label><textarea id="textarea_1" name="question2" required="required"></textarea></div>
+       <div><label for="textarea_2" class="required">Question</label><textarea id="textarea_2" name="question3" required="required"></textarea></div>
+       <div><label for="textarea_3" class="required">Question</label><textarea id="textarea_3" name="question4" required="required"></textarea></div>
+       <div><label for="textarea_4" class="required">Question</label><textarea id="textarea_4" name="question5" required="required"></textarea></div>
+       <div><label for="textarea_5" class="required">Question</label><textarea id="textarea_5" name="question6" required="required"></textarea></div>
+       <div><label for="textarea_6" class="required">Question</label><textarea id="textarea_6" name="question7" required="required"></textarea></div>
+       <div><label for="textarea_7" class="required">Question</label><textarea id="textarea_7" name="question8" required="required"></textarea></div>
+       <div><label for="textarea_8" class="required">Question</label><textarea id="textarea_8" name="question9" required="required"></textarea></div>
+       <div><label for="textarea_9" class="required">Question</label><textarea id="textarea_9" name="question10" required="required"></textarea></div>
+        <input type="submit" value="Create" />
+    </form>
+
+    <ul>
+        <li>
+            <a href="{{ path('questions_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

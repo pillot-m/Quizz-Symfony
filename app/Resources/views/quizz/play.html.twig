@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>{{ quizz.name }}</h1>
+
+    {% for key, question in questions %}
+    <div class="row">
+        <p>Question {{key + 1 }} : {{question.question}}</p>
+        {% for ans_key, answer in answers %}
+            {% if answer.question.id == question.id  %}
+            <input type="radio" name="answer_{{question.id}}_{{key}}" id="answer_{{key}}_1" value="1">
+            <label for="answer_{{key}}_1">{{answer.answer}}</label>
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+<ul>
+    <li>
+        <a href="{{ path('quizz_new') }}">valider</a>
+    </li>
+</ul>
+{% endblock %}

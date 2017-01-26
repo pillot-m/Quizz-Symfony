@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Quizzs list</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for quizz in quizzs %}
+        <tr>
+            <td><a href="{{ path('quizz_show', { 'id': quizz.id }) }}">{{ quizz.id }}</a></td>
+            <td>{{ quizz.name }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('quizz_play', { 'id': quizz.id }) }} " class="waves-effect waves-light btn">Jouer</a>
+                    <a href="{{ path('quizz_delete', { 'id': quizz.id }) }} " class="waves-effect waves-light btn">Supprimer</a>
+                    </li>
+                </ul>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('quizz_new') }}">Create a new quizz</a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Creer un quizz</h1>
+
+ <form name="appbundle_quizz" method="post">
+        <div id="appbundle_quizz"><div><label for="appbundle_quizz_name" class="required">Nom</label><textarea  id="appbundle_quizz_name" name="appbundle_quizz[name]" required="required"></textarea></div><div><input type="hidden" id="appbundle_quizz__token" name="appbundle_quizz[_token]" value="Abo0q-7Rz0TCeY8faRvhsv1CkAu48KqPYLOxU5lfdIk" /></div>
+        <input type="submit" class="waves-effect waves-light btn" value="Creer" />
+    </form>
+{% endblock %}

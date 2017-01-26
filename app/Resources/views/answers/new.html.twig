@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Answer creation</h1>
+
+<form name="appbundle_answers" method="post">
+	{% for key, question in questions %}
+	<div>
+		<div>
+			<p class="required">Question {{key + 1}} : {{question.question}}</p>
+			<div class="row">
+				<div class="input-field col s4">
+					<div class="row">
+						<input id="appbundle_answers_answer{{question.id}}1" placeholder="Réponse 1" class="validate col s6" name="answer1_{{question.id}}" required="required" value="q{{key}}r{{key}}"/>    
+						<p class="col s6">
+							<input type="radio" name="answer_{{question.id}}_{{key}}" id="answer_{{key}}_1" value="1">
+							<label for="answer_{{key}}_1">Right ?</label>
+						</p>
+						<input type="hidden" name="questionId" value="{{question.id}}">
+					</div>
+				</div>
+				<div class="input-field col s4">
+					<div class="row">
+						<input id="appbundle_answers_answer{{question.id}}2" placeholder="Réponse 2" class="validate col s6" name="answer2_{{question.id}}" required="required" value="q{{key}}r{{key}}"/> 
+						<p class="col s6">
+							<input type="radio" name="answer_{{question.id}}_{{key}}" id="answer_{{key}}_2" value="2">
+							<label for="answer_{{key}}_2">Right ?</label>
+						</p>
+						<input type="hidden" name="questionId" value="{{question.id}}">
+					</div>
+				</div>
+				<div class="input-field col s4">
+					<div class="row">
+						<input id="appbundle_answers_answer{{question.id}}3" placeholder="Réponse 3" class="validate col s6" name="answer3_{{question.id}}" required="required" value="q{{key}}r{{key}}"/>
+						<p class="col s6">
+							<input type="radio" name="answer_{{question.id}}_{{key}}" id="answer_{{key}}_3" value="3">
+							<label for="answer_{{key}}_3">Right ?</label>
+						</p>
+						<input type="hidden" name="questionId" value="{{question.id}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		{% endfor %}
+		<input type="submit" value="Create" />
+	</form>
+	<ul>
+		<li>
+			<a href="{{ path('answers_index') }}">Back to the list</a>
+		</li>
+	</ul>
+	{% endblock %}
